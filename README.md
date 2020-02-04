@@ -152,3 +152,4 @@ The aim of this example was to show:
 
 **[Getting Started with Reinforcement Learning (YouTube series)](https://www.youtube.com/watch?v=pc-H4vyg2L4&feature=youtu.be)**
 
+Copyright 2020 The MathWorks, Inc.
