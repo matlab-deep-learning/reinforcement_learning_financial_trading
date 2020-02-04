@@ -1,0 +1,20 @@
+Step: 1000/1000 Action: 4 Profit: 3037 Reward: 13.1451 Reward action: 0.51149
+5821.2
+Step: 1000/1000 Action: 2 Profit: -3878 Reward: -12.8012 Reward action: -0.36268
+5595.2
+Step: 1000/1000 Action: 4 Profit: 2910 Reward: 13.1454 Reward action: 0.51149
+5511.4
+Step: 1000/1000 Action: 27 Profit: -4080 Reward: 9.0328 Reward action: 0.0083733
+6504.7
+Step: 1000/1000 Action: 27 Profit: -920 Reward: 9.0328 Reward action: 0.0083733
+5420.9
+Step: 1000/1000 Action: 27 Profit: 2834 Reward: 9.046 Reward action: 0.0083733
+1036.6
+Step: 1000/1000 Action: 27 Profit: -345 Reward: 9.0328 Reward action: 0.0083733
+4716.5
+Step: 1000/1000 Action: 27 Profit: -2583 Reward: -7.6137 Reward action: 0.0083733
+2576.6
+Step: 1000/1000 Action: 4 Profit: -2374 Reward: 13.1452 Reward action: 0.51149
+4252.1
+Step: 1000/1000 Action: 27 Profit: -588 Reward: 9.0328 Reward action: 0.0083733
+5358.9
