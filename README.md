@@ -1,4 +1,4 @@
-# **Reinforcment Learning For Financial Trading**  :chart_with_upwards_trend:
+# **Reinforcement Learning For Financial Trading**  :chart_with_upwards_trend:
 
 How to use Reinforcement learning for financial trading using Simulated Stock Data using **[MATLAB](https://www.mathworks.com/products/matlab.html)**.
 
@@ -92,7 +92,7 @@ A large penalty is given if ANY trade of the 3 stocks is determined as a bad tra
         - I.e. selling when prices are increasing, buying when prices are falling
     - Holding a stock results in the portfolio value decreasing
     - A good reward is overwritten to be bad if any illogical trade occurs
-        - I.e. sell a stock you don’t have or buy when you don’t had cash 
+        - I.e. sell a stock you donâ€™t have or buy when you donâ€™t had cash 
 
 ## Training
 
@@ -129,7 +129,7 @@ The histogram shows that for 100 simulations, not once did the agent ever lose m
 
 However, you can see that the range varies quite a bit. If you inspect the plots on the right,  just buying and holding 1 stock would returned a profit just as good if not better than the agent.
 
-BUT – It’s easy to judge retrospectively. The agent was trading each day as it occurred.  None of the simulations resulted in a loss.
+BUT â€“ Itâ€™s easy to judge retrospectively. The agent was trading each day as it occurred.  None of the simulations resulted in a loss.
 
 ## Further Improvements 
 
