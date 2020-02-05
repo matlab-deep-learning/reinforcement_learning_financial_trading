@@ -7,7 +7,7 @@ How to use Reinforcement learning for financial trading using Simulated Stock Da
 To run:
 
 1. Open RL_trading_demo.prj
-2. Open workflow.mlx (MATLAB Live Script **preferred**) or workflow.m (MATLAB script)
+2. Open workflow.mlx (MATLAB Live Script **preferred**) or workflow.m (MATLAB script **viewable in GitHub**)
 3. Run workflow.mlx
 
 Environment and Reward can be found in:
