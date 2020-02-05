@@ -153,3 +153,5 @@ The aim of this example was to show:
 **[Getting Started with Reinforcement Learning (YouTube series)](https://www.youtube.com/watch?v=pc-H4vyg2L4&feature=youtu.be)**
 
 Copyright 2020 The MathWorks, Inc.
+
+[![View Reinforcement Learning for Financial Trading on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/74176-reinforcement-learning-for-financial-trading)
