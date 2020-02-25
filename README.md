@@ -148,7 +148,9 @@ The aim of this example was to show:
 - How it can be applied to trading the financial markets
 - Leave a starting point for financial professionals to use and enhance using their own domain expertise.
 
-## Resources
+## For more information on Reinforcement Learning in MATLAB:
+
+**[Download a free trial] (https://www.mathworks.com/products/reinforcement-learning.html)**
 
 **[Getting Started with Reinforcement Learning (YouTube series)](https://www.youtube.com/watch?v=pc-H4vyg2L4&feature=youtu.be)**
 
