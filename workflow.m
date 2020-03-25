@@ -96,10 +96,16 @@ obsInfo = getObservationInfo(env);
 actInfo = getActionInfo(env);
 
 criticOpts = rlRepresentationOptions('LearnRate',1e-3,'GradientThreshold',1,'UseDevice','gpu');
-critic = rlRepresentation(criticNet,criticOpts,'Observation',{'state'},obsInfo);
+% 19b code 
+% critic = rlRepresentation(criticNet,criticOpts,'Observation',{'state'},obsInfo);
+% 20a code
+critic = rlValueRepresentation(criticNet,obsInfo,'Observation',{'state'},criticOpts);
 
 actorOpts = rlRepresentationOptions('LearnRate',1e-3,'GradientThreshold',1,'UseDevice','gpu');
-actor = rlRepresentation(actorNet,actorOpts,'Observation',{'state'},obsInfo,'Action',{'action'},actInfo);
+% 19b code
+% actor = rlRepresentation(actorNet,actorOpts,'Observation',{'state'},obsInfo,'Action',{'action'},actInfo);
+% 20a code
+actor = rlStochasticActorRepresentation(actorNet,obsInfo,actInfo,'Observation',{'state'},actorOpts);
 
 agentOpts = rlACAgentOptions(...
     'NumStepsToLookAhead',64, ...
