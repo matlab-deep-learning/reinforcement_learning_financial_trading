@@ -15,7 +15,7 @@ myStepFunction.m
 
 Requires
 
-- [MATLAB R2020a](https://www.mathworks.com/products/matlab.html)
+- [MATLAB R2020b, R2020a, R2019b](https://www.mathworks.com/products/matlab.html)
 - [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
 - [Reinforcement Learning Toolbox](https://www.mathworks.com/products/reinforcement-learning.html)
 - [Financial Toolbox](https://www.mathworks.com/products/finance.html)
