@@ -1,8 +1,12 @@
 # **Reinforcement Learning For Financial Trading**  :chart_with_upwards_trend:
 
-How to use Reinforcement learning for financial trading using Simulated Stock Data using **[MATLAB](https://www.mathworks.com/products/matlab.html)**.
+How to use Reinforcement learning for financial trading using Simulated Stock Data using **[MATLAB](https://www.mathworks.com/products/matlab.html)**. This project is split into two sections: 
 
-## **Setup**
+
+1. [Single Agent Learning](#section-1)
+2. [Multiagent Learning](#section-2)
+
+# <a name="section-1"></a> Single Agent Learning Setup
 
 To run:
 
@@ -15,7 +19,7 @@ myStepFunction.m
 
 Requires
 
-- [MATLAB R2021b,R2021a, R2020b, R2020a, R2019b](https://www.mathworks.com/products/matlab.html)
+- [MATLAB version >= R2019b](https://www.mathworks.com/products/matlab.html)
 - [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
 - [Reinforcement Learning Toolbox](https://www.mathworks.com/products/reinforcement-learning.html)
 - [Financial Toolbox](https://www.mathworks.com/products/finance.html)
@@ -50,9 +54,9 @@ Stocks are:
 - Simulated via Geometric Brownian Motion or
 - Historical Market data ([source: AlphaVantage](https://www.alphavantage.co/))
 
-Actions (buy, sell ,hold) for 3 stocks = 27 total actions
+**Action Space**: (buy, sell ,hold) for 3 stocks = 27 total actions
 
-The States being observed are:
+**Observation Space**:
 
 - Stocks Owned
 - Price Different when Bought
@@ -96,7 +100,7 @@ A large penalty is given if ANY trade of the 3 stocks is determined as a bad tra
 
 ## Training
 
-![](images/training.png)
+![](images/Training.png)
 
 - Based 12years of data
 - 3000 episodes
@@ -140,13 +144,78 @@ The case study did ignore some common things to consider when trading the market
 - Refined reward system
 - Compare different agents
 
-## Conclusion 
+## Conclusion - Single Agent Case
 
 The aim of this example was to show:
 
 - What reinforcement learning is
 - How it can be applied to trading the financial markets
 - Leave a starting point for financial professionals to use and enhance using their own domain expertise.
+
+# <a name="section-2"></a> Multiagent Learning Setup
+
+The example is to show the use of Multiagent Reinforcement Learning for Financial Trading. In this example, agents compete to outperform each other. They are rewarded when they outcompete the other, and penalized when they underperform. 
+
+
+## Setup
+To run:
+
+1. Open RL_trading_demo.prj
+2. Open workflowMulti.mlx
+3. Run workflowMutli.mlx
+
+Requires
+
+- [MATLAB version >= R2023b](https://www.mathworks.com/products/matlab.html)
+- [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
+- [Reinforcement Learning Toolbox](https://www.mathworks.com/products/reinforcement-learning.html)
+- [Financial Toolbox](https://www.mathworks.com/products/finance.html)
+
+## Overview
+MATLAB R2023b has introduced a new feature that allows for multiagent reinforcement learning, whereby multiple agents interract in the same environment. These agents can either collaborate towards a common goal or compete against each other. 
+
+In this example, two agents compete against each other to outperform each other in trading stocks. They attempt to learn a better strategy that results in a higher profit than their competitor. 
+
+These agents mimic the inherently competitive nature of trading - they fight against their foe to optimize their strategy!
+
+**Note that the environment is nearly identical to the Single Agent Example**. These agents have the same action space and observation space. Each agent also shares the same reward function mentioned in the Signle Agent Example, but two of the agents in this example extend this reward function as mentioned later. 
+
+## Case Study 
+Define the **three** [Proximal Policy Optimization (PPO) agents](https://www.mathworks.com/help/reinforcement-learning/ug/ppo-agents.html) by defining an actor and a critic. These agents could be defined using the [Deep Network Designer](https://www.mathworks.com/help/deeplearning/gs/get-started-with-deep-network-designer.html), although this example defines the networks programatically. The network architecture for each agent follows: 
+
+![actor](images/Actor.png)
+![critic](images/Critic.png)
+
+**Observation Space**: at each time step, each agent observes 19 different continuous values specififed in the Single Agent Example. 
+
+**Action Space**: contains 27 possible actions, just like in the Single Agent Example. 
+
+### Reward Function
+All three agents share a common reward function, and agents 1 and 2 add on to this reward function with a specialized competitive reward. 
+
+**Shared reward for all agents**: Give the agent +1 as a reward if they made a profit or if they sold stocks while its indicators were suggesting a negative trajectory. Give the agent -1 otherwise. This reward is **identical** to the reward in the Single Agent Case. 
+
+**Competitive reward for agents 1 and 2**: Give the agent +0.5 as a reward if it has made more of a profit than its competitor, give the agent -0.5 otherwise. 
+
+Given that agent 3 does not contain the competitive reward, a greater performance in agents 1 and 2 would indicate that the competitive strategy aids in learning. 
+
+
+## Training
+Agents were trained for 2,500 episodes, where each episode contained 2,597 steps (length of training data). The results from the agent as shown in the Episode Manager are shown below:  
+
+![training](images/TrainingMulti.png)
+
+As shown in this image, agents 1 and 2 constantly battle to outcompete each other. 
+
+## Results
+As shown in the results below, agents 1 and 2 outperform agent 3 -- their competitive nature aids in learning. Further, agents 1 and 2 over 1.5x their initial $20,000 on the test dataset. 
+
+These results demonstrate the effectiveness of utilizing competitive agents for the Stock Trading Problem. While the competing agents do not always outperform their soltitary  counterpart (Agent 3), this work proves the utility and possibility of using this multiagent paradigm! 
+
+In the future, this idea could be expanded to many other areas in finance -- multiagent reinforcement learning is currently an active area of research, as its competitive nature lends itself well to the inherently competitive world of finance. 
+
+![Performance](images/Performance.png)
+
 
 ## For more information on Reinforcement Learning in MATLAB:
 **[Free Reinforcement Learning Onramp - No downloads, or installation, just your browser and you!](https://nl.mathworks.com/learn/tutorials/reinforcement-learning-onramp.html)**
