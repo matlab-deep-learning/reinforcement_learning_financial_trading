@@ -172,21 +172,21 @@ Requires
 - [Financial Toolbox](https://www.mathworks.com/products/finance.html)
 
 ## Overview
-MATLAB R2023b has introduced a new feature that allows for multiagent reinforcement learning, whereby multiple agents interract in the same environment. These agents can either collaborate towards a common goal or compete against each other. 
+MATLAB R2023b has introduced a new feature that allows for multiagent reinforcement learning, whereby multiple agents interact in the same environment. These agents can either collaborate towards a common goal or compete against each other. 
 
 In this example, two agents compete against each other to outperform each other in trading stocks. They attempt to learn a better strategy that results in a higher profit than their competitor. 
 
 These agents mimic the inherently competitive nature of trading - they fight against their foe to optimize their strategy!
 
-**Note that the environment is nearly identical to the Single Agent Example**. These agents have the same action space and observation space. Each agent also shares the same reward function mentioned in the Signle Agent Example, but two of the agents in this example extend this reward function as mentioned later. 
+**Note that the environment is nearly identical to the Single Agent Example**. These agents have the same action space and observation space. Each agent also shares the same reward function mentioned in the Single Agent Example, but two of the agents in this example extend this reward function as mentioned later. 
 
 ## Case Study 
-Define the **three** [Proximal Policy Optimization (PPO) agents](https://www.mathworks.com/help/reinforcement-learning/ug/ppo-agents.html) by defining an actor and a critic. These agents could be defined using the [Deep Network Designer](https://www.mathworks.com/help/deeplearning/gs/get-started-with-deep-network-designer.html), although this example defines the networks programatically. The network architecture for each agent follows: 
+Define the **three** [Proximal Policy Optimization (PPO) agents](https://www.mathworks.com/help/reinforcement-learning/ug/ppo-agents.html) by defining an actor and a critic. These agents could be defined using the [Deep Network Designer](https://www.mathworks.com/help/deeplearning/gs/get-started-with-deep-network-designer.html), although this example defines the networks programmatically. The network architecture for each agent follows: 
 
 ![actor](images/Actor.png)
 ![critic](images/Critic.png)
 
-**Observation Space**: at each time step, each agent observes 19 different continuous values specififed in the Single Agent Example. 
+**Observation Space**: at each time step, each agent observes 19 different continuous values specified in the Single Agent Example. 
 
 **Action Space**: contains 27 possible actions, just like in the Single Agent Example. 
 
@@ -210,7 +210,7 @@ As shown in this image, agents 1 and 2 constantly battle to outcompete each othe
 ## Results
 As shown in the results below, agents 1 and 2 outperform agent 3 -- their competitive nature aids in learning. Further, agents 1 and 2 over 1.5x their initial $20,000 on the test dataset. 
 
-These results demonstrate the effectiveness of utilizing competitive agents for the Stock Trading Problem. While the competing agents do not always outperform their soltitary  counterpart (Agent 3), this work proves the utility and possibility of using this multiagent paradigm! 
+These results demonstrate the effectiveness of utilizing competitive agents for the Stock Trading Problem. While the competing agents do not always outperform their solitary counterpart (Agent 3), this work proves the utility and possibility of using this multiagent paradigm! 
 
 In the future, this idea could be expanded to many other areas in finance -- multiagent reinforcement learning is currently an active area of research, as its competitive nature lends itself well to the inherently competitive world of finance. 
 
